@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd214f1-f0eb-4fa6-9239-a5b1d2566bdf" name="변경" comment="-" />
+    <list default="true" id="cbd214f1-f0eb-4fa6-9239-a5b1d2566bdf" name="변경" comment="-add test.md file to content/nest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quartz.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quartz.config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729643107996</updated>
       <workItem from="1729645044953" duration="403000" />
-      <workItem from="1752816108074" duration="14709000" />
+      <workItem from="1752816108074" duration="16264000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <option name="closed" value="true" />
@@ -110,7 +113,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752843284527</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-">
+      <option name="closed" value="true" />
+      <created>1752843967700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752843967700</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-add test.md file to content/nestjs directory">
+      <option name="closed" value="true" />
+      <created>1752846207368</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752846207368</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="-add test.md file to content/nest" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add test.md file to content/nest" />
   </component>
 </project>
