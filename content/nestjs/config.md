@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T02:50:09.918+09:00","tags":["nestjs"],"cssclasses":""}
+{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T04:10:29.708+09:00","published":"2025-07-19T04:10:29.708+09:00","tags":["nestjs"],"cssclasses":"","draft":false}
 ---
 
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
@@ -14,7 +14,7 @@ host: docs.nestjs.com
 favicon: https://docs.nestjs.com/assets/favicons/favicon-32x32.png  
 image: https://nestjs.com/img/nest-og.png  
 ```  
-
+  
 ## Install  
 ```zsh  
 npm i --save @nestjs/config joi  
@@ -34,54 +34,64 @@ npm i --save @nestjs/config joi
   
 ### AppConfig.ts  
 ```ts  
-import { Injectable } from '@nestjs/common';  import { ConfigService } from '@nestjs/config';  import Joi from 'joi';    
-    
-@Injectable()  export class AppConfig {    
-  constructor(private configService: ConfigService) {    
-// 자신의 필드키를 배열로 변환    
-    const keys = Object.keys(this);    
-    
-// 환경변수 필드를 제외한 나머지 타입을 가진 필드는 제외    
-    const filter = keys.filter((key) => typeof this[key] !== 'object');    
-    
-// 필터된 필드키를 기준으로 자신의 명칭과 동일한 환경변수 값을 할당    
-    filter.forEach((key) => {    
-      this[key] = this.configService.get<unknown>(key);    
-    });    
-  }    
-    
-  static readonly validationSchema = Joi.object({    
-    // App    
-    APP_NAME: Joi.string().required(),    
-    PORT: Joi.number().required(),    
-    TZ: Joi.string().required(),    
-    NODE_ENV: Joi.string().valid('local', 'dev', 'prod').default('local'),    
-    
-    // MIKRO ORM    
-    MIKRO_ORM_CLIENT_URL: Joi.string().required(),    
-    MIKRO_ORM_TIMEZONE: Joi.string().required(),    
-    MIKRO_ORM_DB_NAME: Joi.string().required(),    
-    MIKRO_ORM_DEBUG: Joi.boolean(),    
-    
-    // PRISMA ORM    
-    // DATABASE_URL: Joi.string().required(),  
-    }).options({ convert: true });    
-  readonly APP_NAME: string;    
-  readonly PORT: number;    
-  readonly TZ: string;    
-readonly NODE_ENV: 'local' | 'dev' | 'prod';  }  
+import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import Joi from 'joi';
+
+@Injectable()
+export class AppConfig {
+  constructor(private configService: ConfigService) {
+    // 자신의 필드키를 배열로 변환
+    const keys = Object.keys(this);
+
+    // 환경변수 필드를 제외한 나머지 타입을 가진 필드는 제외
+    const filter = keys.filter((key) => typeof this[key] !== 'object');
+
+    // 필터된 필드키를 기준으로 자신의 명칭과 동일한 환경변수 값을 할당
+    filter.forEach((key) => {
+      this[key] = this.configService.get<unknown>(key);
+    });
+  }
+
+  static readonly validationSchema = Joi.object({
+    // App
+    APP_NAME: Joi.string().required(),
+    PORT: Joi.number().required(),
+    TZ: Joi.string().required(),
+    NODE_ENV: Joi.string().valid('local', 'dev', 'prod').default('local'),
+
+    // MIKRO ORM
+    MIKRO_ORM_CLIENT_URL: Joi.string().required(),
+    MIKRO_ORM_TIMEZONE: Joi.string().required(),
+    MIKRO_ORM_DB_NAME: Joi.string().required(),
+    MIKRO_ORM_DEBUG: Joi.boolean(),
+
+    // PRISMA ORM
+    // DATABASE_URL: Joi.string().required(),
+  }).options({ convert: true });
+
+  readonly APP_NAME: string;
+  readonly PORT: number;
+  readonly TZ: string;
+  readonly NODE_ENV: 'local' | 'dev' | 'prod';
+}
 ```  
   
 ### AppConfigModule.ts  
 ```ts  
-import { Global, Module } from '@nestjs/common';  import { AppConfig } from './app-config';  import { ConfigModule } from '@nestjs/config';    
-    
-@Global()  @Module({    
-  imports: [    
-    ConfigModule.forRoot({    
-      validationSchema: AppConfig.validationSchema,    
-    }),    
-  ],    
-  providers: [AppConfig],    
-exports: [AppConfig],  })  export class AppConfigModule {}  
+import { Global, Module } from '@nestjs/common';
+import { AppConfig } from './app-config';
+import { ConfigModule } from '@nestjs/config';
+
+@Global()
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      validationSchema: AppConfig.validationSchema,
+    }),
+  ],
+  providers: [AppConfig],
+  exports: [AppConfig],
+})
+export class AppConfigModule {}
 ```
