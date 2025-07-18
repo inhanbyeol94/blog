@@ -1,9 +1,7 @@
 ---
-title: config
-draft: false
-tags:
-  - nestjs
+{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T02:48:33.539+09:00","tags":["nestjs"],"cssclasses":""}
 ---
+
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
 nestjs/config에 대해 자세한 설명은 공식문서를 참고하세요.  
   
@@ -17,7 +15,7 @@ favicon: https://docs.nestjs.com/assets/favicons/favicon-32x32.png
 image: https://nestjs.com/img/nest-og.png  
 ```  
   
-  
+  TEST
 ## Install  
 ```zsh  
 npm i --save @nestjs/config joi  
