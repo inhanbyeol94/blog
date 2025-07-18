@@ -1,20 +1,10 @@
 ---
-{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T04:22:49.913+09:00","published":"2025-07-19T04:22:49.913+09:00","tags":["nestjs"],"cssclasses":"","draft":false}
+{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T04:24:03.742+09:00","published":"2025-07-19T04:24:03.742+09:00","tags":["nestjs"],"cssclasses":"","draft":false}
 ---
 
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
-nestjs/config에 대해 자세한 설명은 공식문서를 참고하세요.  
-  
-  
-```cardlink  
-url: https://docs.nestjs.com/techniques/configuration  
-title: "Documentation | NestJS - A progressive Node.js framework"  
-description: "Nest is a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript, is built with TypeScript and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming)."  
-host: docs.nestjs.com  
-favicon: https://docs.nestjs.com/assets/favicons/favicon-32x32.png  
-image: https://nestjs.com/img/nest-og.png  
-```  
-  
+nestjs/config에 대해 자세한 설명은 [공식문서](https://docs.nestjs.com/techniques/configuration)를 참고하세요.  
+
 ## Install  
 ```zsh  
 npm i --save @nestjs/config joi  
