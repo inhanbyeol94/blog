@@ -1,8 +1,8 @@
 ---
-title: Example Title
+title: config
 draft: false
 tags:
-  - example-tag
+  - nestjs
 ---
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
 nestjs/config에 대해 자세한 설명은 공식문서를 참고하세요.  
