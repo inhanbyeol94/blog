@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T04:10:29.708+09:00","published":"2025-07-19T04:10:29.708+09:00","tags":["nestjs"],"cssclasses":"","draft":false}
+{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T04:22:49.913+09:00","published":"2025-07-19T04:22:49.913+09:00","tags":["nestjs"],"cssclasses":"","draft":false}
 ---
 
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
@@ -33,7 +33,7 @@ npm i --save @nestjs/config joi
 > 추가로, boolean 검증 시 "true" | "false" 문자열 작성시에도 올바른 형변환을 지원합니다.  
   
 ### AppConfig.ts  
-```ts  
+```ts
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import Joi from 'joi';
@@ -78,7 +78,7 @@ export class AppConfig {
 ```  
   
 ### AppConfigModule.ts  
-```ts  
+```ts
 import { Global, Module } from '@nestjs/common';
 import { AppConfig } from './app-config';
 import { ConfigModule } from '@nestjs/config';
