@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"jwt","created":"2025-07-19T17:02:28.891+09:00","modified":"2025-07-19T19:45:40.230+09:00","tags":["nestjs","jwt","typescript","auth"],"cssclasses":""}
+{"publish":true,"title":"jwt","created":"2025-07-19T17:02:28.891+09:00","modified":"2025-07-19T19:51:15.760+09:00","tags":["nestjs","jwt","typescript","auth"],"cssclasses":""}
 ---
 
 인증방식 중 제일 많이 쓰여지고있는 jwt 인증 방식을 구현하기위해 `jsonwebtoken` 패키지를 사용합니다.  
@@ -35,15 +35,14 @@ export class JwtModule {}
 
 ### JwtType
 ```ts
-import { JwtPayload as JsonWebTokenPayload } from 'jsonwebtoken';
+import { JwtPayload } from 'jsonwebtoken';
 
 export interface SignPayload {
   id: number;
   role: number;
 }
 
-export interface JwtPayload extends SignPayload, JsonWebTokenPayload {}
-
+export interface TokenPayload extends SignPayload, JwtPayload {}
 ```
 
 ### JwtService
@@ -54,7 +53,7 @@ export interface JwtPayload extends SignPayload, JsonWebTokenPayload {}
 ```ts
 import { Injectable } from '@nestjs/common';
 import { decode, sign, verify } from 'jsonwebtoken';
-import { JwtPayload, SignPayload } from './jwt.type';
+import { TokenPayload, SignPayload } from './jwt.type';
 import { AppConfig } from '../app-config/app-config';
 
 @Injectable()
@@ -68,11 +67,11 @@ export class JwtService {
   }
 
   verify(token: string) {
-    return verify(token, this.appConfig.JWT_SECRET_KEY) as JwtPayload;
+    return verify(token, this.appConfig.JWT_SECRET_KEY) as TokenPayload;
   }
 
   decode(token: string) {
-    return decode(token) as JwtPayload | null;
+    return decode(token) as TokenPayload | null;
   }
 }
 ```
@@ -82,7 +81,7 @@ export class JwtService {
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtService } from './jwt.service';
 import { AppConfigModule } from '../app-config/app-config.module';
-import { JwtPayload } from './jwt.type';
+import { TokenPayload } from './jwt.type';
 import { sign } from 'jsonwebtoken';
 import { AppConfig } from '../app-config/app-config';
 
@@ -90,7 +89,7 @@ describe('JwtService', () => {
   let service: JwtService;
   let appConfig: AppConfig;
 
-  const payload: JwtPayload = {
+  const payload: TokenPayload = {
     id: 1,
     role: 1,
   };
