@@ -124,6 +124,7 @@ button.desktop-explorer {
       color: var(--dark);
       opacity: 0.75;
       pointer-events: all;
+      font-size: 0.85rem;
 
       &.active {
         opacity: 1;
@@ -200,6 +201,7 @@ button.desktop-explorer {
   transition: transform 0.3s ease;
   backface-visibility: visible;
   flex-shrink: 0;
+  width:0.75rem;
 }
 
 li:has(> .folder-outer:not(.open)) > .folder-container > svg {
