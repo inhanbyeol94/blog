@@ -7,7 +7,7 @@ const OverflowList = ({
   return (
     <ul {...props} class={[props.class, "overflow"].filter(Boolean).join(" ")} id={props.id}>
       {children}
-      <li class="overflow-end" />
+      <li class="overflow-end" aria-hidden="true" />
     </ul>
   )
 }

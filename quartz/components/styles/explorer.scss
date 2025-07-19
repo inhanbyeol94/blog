@@ -119,6 +119,7 @@ button.desktop-explorer {
     margin: 0;
     padding: 0;
     overscroll-behavior: contain;
+    padding: 0;
 
     & li > a {
       color: var(--dark);
@@ -148,6 +149,10 @@ button.desktop-explorer {
     margin-left: 6px;
     padding-left: 0.8rem;
     border-left: 1px solid var(--lightgray);
+  }
+  
+  .folder-outer > ul > li {
+    padding: 4px 0 4px 7px;
   }
 }
 
