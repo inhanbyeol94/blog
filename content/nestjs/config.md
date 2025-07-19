@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-19T19:59:57.581+09:00","tags":["nestjs","env","component"],"cssclasses":""}
+{"publish":true,"title":"config","created":"2025-07-19T02:45:03.355+09:00","modified":"2025-07-20T01:46:49.844+09:00","tags":["nestjs","env","component"],"cssclasses":""}
 ---
 
 환경변수를 구성하기위해 필요한 패키지이며, Joi 패키지를 통해 환경변수 유효성 검증을 실행합니다.    
