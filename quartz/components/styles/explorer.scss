@@ -154,6 +154,10 @@ button.desktop-explorer {
   .folder-outer > ul > li {
     padding: 4px 0 4px 7px;
   }
+  
+  .folder-outer > ul > li > a {
+    display: flex;
+  }
 }
 
 .folder-container {
