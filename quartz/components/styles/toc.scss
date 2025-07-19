@@ -46,6 +46,7 @@ ul.toc-content.overflow {
   max-height: calc(100% - 2rem);
   overscroll-behavior: contain;
   list-style: none;
+  font-size: 0.85rem;
 
   & > li > a {
     color: var(--dark);
