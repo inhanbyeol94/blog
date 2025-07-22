@@ -1,19 +1,20 @@
 ---
-{"publish":true,"title":"jwt","created":"2025-07-19T17:02:28.891+09:00","modified":"2025-07-19T19:51:15.760+09:00","tags":["nestjs","jwt","typescript","auth"],"cssclasses":""}
+{"publish":true,"title":"jwt","created":"2025-07-19T17:02:28.891+09:00","modified":"2025-07-21T22:59:01.564+09:00","tags":["nestjs","jwt","typescript","auth"],"cssclasses":""}
 ---
 
 인증방식 중 제일 많이 쓰여지고있는 jwt 인증 방식을 구현하기위해 `jsonwebtoken` 패키지를 사용합니다.  
 
 ## Install
-```zsh
+```bash
 npm i jsonwebtoken
 npm i -D @types/jsonwebtoken
 ```
 
 
+
 ## Configure
 
-```zsh
+```bash
 nest g mo jwt
 nest g s jwt
 ```
